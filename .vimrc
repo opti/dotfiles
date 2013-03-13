@@ -173,6 +173,11 @@ let g:cab_ack_cmd = "ack -Qi"
 " Ag
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
+" html indentation
+let g:html_indent_inctags = "html,body,head,tbody"
+let g:html_indent_script1 = "inc"
+let g:html_indent_style1 = "inc"
+
 " Custom functions
 fun! s:smallWindow()
   if exists("+lines")
