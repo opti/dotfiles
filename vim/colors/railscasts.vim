@@ -46,6 +46,7 @@ hi! link rubyStringDelimiter String
 " nil, self, symbols
 hi Constant guifg=#6D9CBD
 hi rubyPseudoVariable guifg=#CFCFFF
+hi! link jsThis rubyPseudoVariable
 " hi! link rubyEval Normal
 
 " def, end, include, load, require, alias, super, yield, lambda, proc
