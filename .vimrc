@@ -123,7 +123,8 @@ endif
 map <C-h> :bp<CR>
 map <C-l> :bn<CR>
 
-nnoremap <CR> :noh<cr>
+" nnoremap <CR> :noh<cr>
+nnoremap <cr> :noh<CR><CR>:<backspace>
 
 " Match brackets by tab
 nnoremap <tab> %
