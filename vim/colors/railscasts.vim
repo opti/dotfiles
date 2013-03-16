@@ -29,11 +29,11 @@ hi Cursor     guibg=#FFFFFF
 hi CursorLine guibg=#333435
 hi LineNr     guifg=#666666
 hi Visual     guibg=#5A647E
-hi Search     guifg=NONE    guibg=#131313  gui=NONE
+hi Search     guifg=NONE    guibg=#585858  gui=NONE
 hi Folded     guifg=#F6F3E8 guibg=#444444  gui=NONE
 hi Directory  guifg=#A5C160 gui=NONE
 hi Error      guifg=#FFFFFF guibg=#990000
-hi MatchParen guifg=#000000    guibg=#A5C160
+hi MatchParen guifg=#000000 guibg=#A5C160
 hi Title      guifg=#E6E1DC
 
 hi Comment    guifg=#BC9357 guibg=NONE     gui=italic
@@ -41,7 +41,7 @@ hi! link Todo Function
 
 hi String     guifg=#A5C160
 hi! link Number String
-hi! link rubyStringDelimiter String
+hi rubyStringDelimiter guifg=#66CC66
 
 " nil, self, symbols
 hi Constant guifg=#6D9CBD
@@ -124,12 +124,12 @@ hi PMenuThumb guibg=#AAAAAA gui=NONE
 
 " MiniBufExpl Colors
 " ------------------
-hi MBEVisibleActive guifg=#A6DB29 guibg=fg
-hi MBEVisibleChangedActive guifg=#F1266F guibg=fg
-hi MBEVisibleChanged guifg=#F1266F guibg=fg
-hi MBEVisibleNormal guifg=#5DC2D6 guibg=fg
-hi MBEChanged guifg=#CD5907 guibg=fg
-hi MBENormal guifg=#808080 guibg=fg
+hi MBEVisibleActive guifg=#A6DB29 guibg=NONE
+hi MBEVisibleChangedActive guifg=#F1266F guibg=NONE
+hi MBEVisibleChanged guifg=#F1266F guibg=NONE
+hi MBEVisibleNormal guifg=#5DC2D6 guibg=NONE
+hi MBEChanged guifg=#CD5907 guibg=NONE
+hi MBENormal guifg=#808080 guibg=NONE
 
 
 " hi rubyDelimEscape guifg=#FF0000
