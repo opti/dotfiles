@@ -36,7 +36,7 @@ hi Error      guifg=#FFFFFF guibg=#990000
 hi MatchParen guifg=#000000 guibg=#A5C160
 hi Title      guifg=#E6E1DC
 
-hi Comment    guifg=#BC9357 guibg=NONE     gui=italic
+hi Comment    guifg=#BC9357 guibg=NONE gui=italic
 hi! link Todo Function
 
 hi String     guifg=#A5C160
