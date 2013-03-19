@@ -69,8 +69,6 @@ hi rubyConstant guifg=#DA4938
 
 " #{foo}, <%= bar %>
 hi Delimiter guifg=#509E50
-" hi Delimiter guifg=#CC7833
-" hi erubyDelimiter guifg=NONE
 
 "rubyInterpolation
 hi! link rubyInterpolation Normal
@@ -185,4 +183,3 @@ hi MBENormal guifg=#808080 guibg=NONE
 " hi rubyRailsRakeMethod guifg=#FF0000
 " hi railsUserMethod guifg=#FF0000
 " hi rubyRailsUserMethod guifg=#FF0000
-"

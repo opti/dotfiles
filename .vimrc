@@ -45,6 +45,10 @@ set vb
 
 syntax on
 
+filetype on           " Enable filetype detection
+filetype indent on    " Enable filetype-specific indenting
+filetype plugin on    " Enable filetype-specific plugins
+
 " Undo
 if has("persistent_undo")
   set undodir=~/.vim/tmp/undo
@@ -76,10 +80,6 @@ au BufNewFile,BufRead {*.html.erb,*.yml} set filetype=eruby
 au FileType text setlocal textwidth=78
 
 au BufNewFile,BufRead *.conf set ft=config
-
-filetype on           " Enable filetype detection
-filetype indent on    " Enable filetype-specific indenting
-filetype plugin on    " Enable filetype-specific plugins
 
 if has("gui_running")
   set guicursor=a:block
