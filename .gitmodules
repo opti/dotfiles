@@ -19,3 +19,9 @@
 [submodule "vim/bundle/vim-matchit"]
 	path = vim/bundle/vim-matchit
 	url = git://github.com/tsaleh/vim-matchit.git
+[submodule "vim/bundle/dash.vim"]
+	path = vim/bundle/dash.vim
+	url = git://github.com/rizzatti/dash.vim.git
+[submodule "vim/bundle/funcoo.vim"]
+	path = vim/bundle/funcoo.vim
+	url = git://github.com/rizzatti/funcoo.vim.git
