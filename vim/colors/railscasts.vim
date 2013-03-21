@@ -24,28 +24,28 @@ let ruby_operators = 1
 " Tan          #FFC66D
 " Red          #DA4938
 
-hi Normal     guifg=#E6E1DC guibg=#232323
-hi Cursor     guibg=#FFFFFF
-hi CursorLine guibg=#333435
-hi LineNr     guifg=#666666
-hi Visual     guibg=#5A647E
-hi Search     guifg=NONE    guibg=#585858  gui=NONE
-hi Folded     guifg=#F6F3E8 guibg=#444444  gui=NONE
-hi Directory  guifg=#A5C160 gui=NONE
-hi Error      guifg=#FFFFFF guibg=#990000
-hi MatchParen guifg=#000000 guibg=#A5C160
-hi Title      guifg=#E6E1DC
+hi Normal               guifg=#E6E1DC guibg=#232323
+hi Cursor               guibg=#FFFFFF
+hi CursorLine           guibg=#333435
+hi LineNr               guifg=#666666
+hi Visual               guibg=#5A647E
+hi Search               guifg=NONE    guibg=#585858  gui=NONE
+hi Folded               guifg=#F6F3E8 guibg=#444444  gui=NONE
+hi Directory            guifg=#A5C160 gui=NONE
+hi Error                guifg=#FFFFFF guibg=#990000
+hi MatchParen           guifg=#000000 guibg=#A5C160
+hi Title                guifg=#E6E1DC
 
-hi Comment    guifg=#BC9357 guibg=NONE gui=italic
+hi Comment              guifg=#BC9357 guibg=NONE gui=italic
 hi! link Todo Function
 
-hi String     guifg=#A5C160
+hi String               guifg=#A5C160
 hi! link Number String
-hi rubyStringDelimiter guifg=#66CC66
+hi rubyStringDelimiter  guifg=#66CC66
 
 " nil, self, symbols
-hi Constant guifg=#6D9CBD
-hi rubyPseudoVariable guifg=#CFCFFF
+hi Constant             guifg=#6D9CBD
+hi rubyPseudoVariable   guifg=#CFCFFF
 hi! link jsThis rubyPseudoVariable
 " hi! link rubyEval Normal
 
