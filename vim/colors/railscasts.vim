@@ -50,7 +50,7 @@ hi! link jsThis rubyPseudoVariable
 " hi! link rubyEval Normal
 
 " def, end, include, load, require, alias, super, yield, lambda, proc
-hi Define guifg=#CC7733 gui=NONE
+hi Define               guifg=#CC7733 gui=NONE
 hi! link Include Define
 hi! link Keyword Define
 hi! link Macro Define
@@ -65,27 +65,27 @@ hi! link rubyOperator Define
 hi! link rubyExceptional Define
 hi! link rubyMethodExceptional rubyExceptional
 
-hi rubyConstant guifg=#DA4938
+hi rubyConstant         guifg=#DA4938
 
 " #{foo}, <%= bar %>
-hi Delimiter guifg=#509E50
+hi Delimiter            guifg=#509E50
 
 "rubyInterpolation
 hi! link rubyInterpolation Normal
 
 " function name (after def)
-hi Function guifg=#FFC66D gui=NONE
+hi Function             guifg=#FFC66D gui=NONE
 
 "@var, @@var, $var
-hi Identifier guifg=#CFCFFF gui=NONE
+hi Identifier           guifg=#CFCFFF gui=NONE
 
 " |param|
-hi rubyBlockParameter guifg=#CFCFFF gui=NONE
+hi rubyBlockParameter   guifg=#CFCFFF gui=NONE
 hi! link rubyInterpolation rubyBlockParameter
 " #if, #else, #endif
 
 " case, begin, do, for, if, unless, while, until, else
-hi Statement guifg=#CC7733 gui=NONE
+hi Statement            guifg=#CC7733 gui=NONE
 hi! link PreProc Statement
 hi! link PreCondit Statement
 
