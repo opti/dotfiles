@@ -90,14 +90,14 @@ hi! link PreProc Statement
 hi! link PreCondit Statement
 
 " SomeClassName
-hi Type guifg=NONE gui=NONE
+hi Type                 guifg=NONE gui=NONE
 
 " has_many, respond_to, params
 " hi railsMethod guifg=#DA4938 gui=NONE
 hi! link railsMethod Normal
 
-hi DiffAdd guifg=#E6E1DC guibg=#144212
-hi DiffDelete guifg=#E6E1DC guibg=#660000
+hi DiffAdd              guifg=#E6E1DC guibg=#144212
+hi DiffDelete           guifg=#E6E1DC guibg=#660000
 
 hi xmlTag guifg=#E8BF6A
 hi! link xmlTagName  xmlTag
