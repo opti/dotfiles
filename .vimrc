@@ -157,6 +157,7 @@ map <leader>gj :CommandTFlush<cr>\|:CommandT app/assets/javascripts<cr>
 
 " minibuf
 let g:miniBufExplSplitBelow=0
+let g:miniBufExplCheckDupeBufs = 0
 
 " ragtag
 let g:ragtag_global_maps = 1
