@@ -24,6 +24,7 @@ export PATH="\
 source $ZSH/oh-my-zsh.sh
 
 export EDITOR='mvim -f --nomru -c "au VimLeave * !open -a Terminal"'
+export PGDATA="/usr/local/var/postgres"
 
 # for Homebrew installed rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
