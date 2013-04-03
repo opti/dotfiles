@@ -180,36 +180,6 @@ let g:html_indent_inctags = "html,body,head,tbody"
 let g:html_indent_script1 = "inc"
 let g:html_indent_style1 = "inc"
 
-" Custom functions
-fun! s:smallWindow()
-  if exists("+lines")
-    set lines=22
-  endif
-  if exists("+columns")
-    set columns=80
-  endif
-endf
-
-command! Small call s:smallWindow()
-
-fun! s:smallTopWindow()
-  let bounds = system("osascript -e 'tell application \"Finder\" to get bounds of window of desktop'")
-  let screenWidth = split(bounds, ', ')[2]
-  let centerX = screenWidth / 2 - 700
-
-  call s:smallWindow()
-  exe 'winpos ' . centerX . ' 300'
-endf
-
-command! SmallTop call s:smallTopWindow()
-
-fun! s:smallRuby()
-  call s:smallTopWindow()
-  set filetype=ruby
-endf
-
-command! SmallRuby call s:smallRuby()
-
 " Remap the tab key to do autocompletion or indentation depending on the
 " context (from http://www.vim.org/tips/tip.php?tip_id=102)
 function! InsertTabWrapper()
