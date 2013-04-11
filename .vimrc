@@ -1,70 +1,113 @@
 " Igor Pstyga's .vimrc file
 " Based on https://github.com/vadimr/dotfiles/blob/master/.vimrc
 
-execute pathogen#infect()
-
+" Use Vim settings, rather then Vi settings (much better!).
+" This must be first, because it changes other options as a side effect.
 set nocompatible
 
-" Set encoding
-set encoding=utf-8
+" ================ General Config ====================
+
+set number                      "Line numbers are good
+set backspace=indent,eol,start  "Allow backspace in insert mode
+set history=1000                "Store lots of :cmdline history
+set showcmd                     "Show incomplete cmds down the bottom
+set showmode                    "Show current mode down the bottom
+set gcr=a:blinkon0              "Disable cursor blink
+set visualbell                  "No sounds
+set autoread                    "Reload files changed outside vim
+set encoding=utf-8              "Set encoding
 set clipboard=unnamed
+
+" This makes vim act like all other editors, buffers can
+" exist in the background without being in a window.
+" http://items.sjbach.com/319/configuring-vim-right
+set hidden
 
 " Remap leader
 if has('eval')
   let mapleader=","
 end
 
-set hidden
-set history=1000
-set scrolloff=3
-set backspace=indent,eol,start
+" ================ Plugins initialization ===========
+"
+execute pathogen#infect()
 
-" Whitespace stuff
-set wrap
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
-set expandtab
-set list listchars=tab:\ \ ,trail:·
-set autoindent
+" ================ Search Settings  =================
 
-" Search
-set hlsearch
-set incsearch
+set incsearch        "Find the next match as we type the search
+set hlsearch         "Hilight searches by default
 set ignorecase
+set viminfo='100,f1  "Save up to 100 marks, enable capital marks
 set smartcase
 
-" incomplete commands
-set showcmd
+
+" ================ Turn Off Swap Files ==============
+
+set noswapfile
+set nobackup
+set nowb
+
+" ================ Persistent Undo ==================
+" Keep undo history across sessions, by storing in file.
+" Only works all the time.
+
+silent !mkdir ~/.vim/tmp/undo > /dev/null 2>&1
+set undodir=~/.vim/tmp/undo
+set undofile
+
+" ================ Indentation ======================
+
+set autoindent
+set smartindent
+set smarttab
+set shiftwidth=2
+set softtabstop=2
+set tabstop=2
+set expandtab
+
+filetype plugin on
+filetype indent on
+
+" Display tabs and trailing spaces visually
+set list listchars=tab:\ \ ,trail:·
+
+set nowrap       "Don't wrap lines
+set linebreak    "Wrap lines at convenient points
+
+" ================ Folds ============================
+
+set foldmethod=indent   "fold based on indent
+set foldnestmax=3       "deepest fold is 3 levels
+set nofoldenable        "dont fold by default
+
+" ================ Completion =======================
+
+set wildmode=list:longest
+set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
+set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
+set wildignore+=.git
+set wildignore+=*.rbc
+set wildignore+=*vim/backups*
+set wildignore+=*sass-cache*
+set wildignore+=*DS_Store*
+set wildignore+=vendor/rails/**
+set wildignore+=vendor/cache/**
+set wildignore+=vendor/gems/**
+set wildignore+=public/*
+set wildignore+=coverage/**
+set wildignore+=*.gem
+set wildignore+=log/**
+set wildignore+=tmp/**
+set wildignore+=*.png,*.jpg,*.gif
+
+" ================ Scrolling ========================
+
+set scrolloff=8         "Start scrolling when we're 8 lines away from margins
+set sidescrolloff=15
+set sidescroll=1
+
 " always show cursor position
 set ruler
-set number
-
-" visualvbell instead of beeping
-set vb
-
-syntax on
-
-filetype on           " Enable filetype detection
-filetype indent on    " Enable filetype-specific indenting
-filetype plugin on    " Enable filetype-specific plugins
-
-" Undo
-if has("persistent_undo")
-  set undodir=~/.vim/tmp/undo
-  set undofile
-endif
-
-" Backup
-set backupdir=~/.vim/tmp/backup
-set directory=~/.vim/tmp/swap
-set backup
-
-" Tab completion
-set wildmenu
-set wildmode=longest,list
-set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*
-set wildignore+=vendor/**,public/*,log/*,tmp/*,coverage/**
 
 " Capfile, lGemfile, Rakefile, Vagrantfile, Thorfile, Guardfile, config.ru and .opener files are ruby
 au BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Vagrantfile,Thorfile,Guardfile,config.ru,.opener,.env} set ft=ruby
