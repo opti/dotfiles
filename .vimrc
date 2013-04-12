@@ -40,7 +40,6 @@ set ignorecase
 set viminfo='100,f1  "Save up to 100 marks, enable capital marks
 set smartcase
 
-
 " ================ Turn Off Swap Files ==============
 
 set noswapfile
