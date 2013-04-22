@@ -70,8 +70,9 @@ filetype indent on
 " Display tabs and trailing spaces visually
 set list listchars=tab:\ \ ,trail:·
 
-set nowrap       "Don't wrap lines
-set linebreak    "Wrap lines at convenient points
+set wrap
+" set nowrap       "Don't wrap lines
+" set linebreak    "Wrap lines at convenient points
 
 " ================ Folds ============================
 
@@ -135,7 +136,7 @@ if has("gui_running")
   set guifont=Meslo\ LG\ S\ for\ Powerline:h12
   " set guifont=Monaco:h12
   " line padding
-  set lsp=1
+  set lsp=2
 
   " highlighting of cursor line
   set cursorline
