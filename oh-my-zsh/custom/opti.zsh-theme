@@ -1,8 +1,3 @@
-# ZSH Theme emulating the Fish shell's default prompt.
-# _fishy_collapsed_wd() {
-#   echo $(pwd | perl -pe "s|^$HOME|~|g; s|/([^/])[^/]*(?=/)|/\$1|g")
-# }
-
 PROMPT='%{$fg[green]%}%n@%m%{$reset_color%}:%1~$(git_prompt_info) %(!.#.$) '
 RPROMPT='%{$FG[239]%}[%*]%{$reset_color%}'
 
