@@ -197,7 +197,7 @@ map <leader>gl :CommandTFlush<cr>\|:CommandT lib<cr>
 map <leader>gj :CommandTFlush<cr>\|:CommandT app/assets/javascripts<cr>
 
 " minibuf
-let g:miniBufExplSplitBelow=0
+let g:miniBufExplSplitBelow = 0
 let g:miniBufExplCheckDupeBufs = 0
 
 " ragtag
@@ -253,5 +253,3 @@ command! -nargs=+ -complete=dir Elast call EditLastFileFromDir(<f-args>)
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 " map ,e to open files in the same directory as current file
 map <leader>e :edit %%
-
-map -a :call SyntaxAttr()<CR>
