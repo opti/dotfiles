@@ -124,6 +124,8 @@ au FileType text setlocal textwidth=78
 
 au BufNewFile,BufRead *.conf set ft=config
 
+autocmd Filetype gitcommit setlocal spell textwidth=72
+
 if has("gui_running")
   set guicursor=a:block
   " always show last status
