@@ -28,10 +28,6 @@ if has('eval')
   let mapleader=","
 end
 
-" ================ Plugins initialization ===========
-"
-execute pathogen#infect()
-
 " ================ Search Settings  =================
 
 set incsearch        "Find the next match as we type the search
@@ -63,9 +59,6 @@ set shiftwidth=2
 set softtabstop=2
 set tabstop=2
 set expandtab
-
-filetype plugin on
-filetype indent on
 
 " Display tabs and trailing spaces visually
 set list listchars=tab:\ \ ,trail:·
@@ -198,20 +191,6 @@ map <leader>gs :CommandTFlush<cr>\|:CommandT spec<cr>
 map <leader>gl :CommandTFlush<cr>\|:CommandT lib<cr>
 map <leader>gj :CommandTFlush<cr>\|:CommandT app/assets/javascripts<cr>
 
-" minibuf
-let g:miniBufExplSplitBelow = 0
-let g:miniBufExplCheckDupeBufs = 0
-
-" ragtag
-let g:ragtag_global_maps = 1
-
-" NERDTree
-map <Leader>n :NERDTreeFind<CR>
-let g:NERDTreeWinPos = "right"
-
-" Quick run
-map <Leader>r :QuickRun<CR>
-
 " Cab vim
 let g:cab_ack_cmd = "ack -Qi"
 
@@ -255,3 +234,39 @@ command! -nargs=+ -complete=dir Elast call EditLastFileFromDir(<f-args>)
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 " map ,e to open files in the same directory as current file
 map <leader>e :edit %%
+
+" ================ Plugins initialization ===========
+"
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+
+Bundle 'scrooloose/nerdtree'
+Bundle 'tpope/vim-bundler'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-rake'
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'pangloss/vim-javascript'
+Bundle 'tsaleh/vim-matchit'
+Bundle 'rizzatti/funcoo.vim'
+Bundle 'rizzatti/dash.vim'
+Bundle 'rking/ag.vim'
+
+filetype plugin indent on
+
+" NERDTree
+map <Leader>n :NERDTreeFind<CR>
+let g:NERDTreeWinPos = "right"
+
+" Quick run
+map <Leader>r :QuickRun<CR>
+
+" minibuf
+let g:miniBufExplSplitBelow = 0
+let g:miniBufExplCheckDupeBufs = 0
+
+" ragtag
+let g:ragtag_global_maps = 1
