@@ -236,7 +236,8 @@ cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <leader>e :edit %%
 
 " ================ Plugins initialization ===========
-"
+" Vudnle stuff {
+
 filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -254,8 +255,14 @@ Bundle 'tsaleh/vim-matchit'
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
 Bundle 'rking/ag.vim'
+Bundle 'tomtom/tcomment_vim'
+Bundle 'thinca/vim-quickrun'
+
+Bundle 'vadimr/bclose.vim'
 
 filetype plugin indent on
+
+" } Vundle
 
 " NERDTree
 map <Leader>n :NERDTreeFind<CR>
