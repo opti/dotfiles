@@ -2,3 +2,4 @@
 .rbenv-vars
 Procfile.dev
 .env
+.rake_tasks~
