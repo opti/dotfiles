@@ -1,7 +1,7 @@
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="opti"
 DISABLE_AUTO_UPDATE="true"
-DISABLE_LS_COLORS="true"
+DISABLE_LS_COLORS="false"
 
 plugins=(git bundler brew gem rbates)
 
