@@ -17,6 +17,7 @@ set visualbell                  "No sounds
 set autoread                    "Reload files changed outside vim
 set encoding=utf-8              "Set encoding
 set clipboard=unnamed
+set ruler                       "Always show cursor position
 
 " This makes vim act like all other editors, buffers can
 " exist in the background without being in a window.
@@ -95,8 +96,6 @@ set scrolloff=8         "Start scrolling when we're 8 lines away from margins
 set sidescrolloff=15
 set sidescroll=1
 
-" always show cursor position
-set ruler
 
 " Capfile, lGemfile, Rakefile, Vagrantfile, Thorfile, Guardfile, config.ru and .opener files are ruby
 au BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Vagrantfile,Thorfile,Guardfile,config.ru,.opener,.env} set ft=ruby
