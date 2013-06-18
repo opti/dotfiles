@@ -234,6 +234,7 @@ cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <leader>e :edit %%
 
 " ================ Plugins initialization ===========
+" Check https://github.com/gmarik/vundle for documentation.
 " Vudnle stuff {
 
 filetype off
