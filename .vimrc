@@ -227,8 +227,8 @@ endfunction
 
 command! -nargs=+ -complete=dir Elast call EditLastFileFromDir(<f-args>)
 
-" Next mapping is adopted from destroyallsoftware.com screencasts
-" expand path of directory of current file typing %% in command mode
+" Next mapping is adopted from destroyallsoftware.com screencasts.
+" It expands path of directory of current file typing %% in command mode
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 " map ,e to open files in the same directory as current file
 map <leader>e :edit %%
