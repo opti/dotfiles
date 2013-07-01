@@ -178,16 +178,16 @@ command! Ctags !ctags --exclude=*.{sql,js,log} --exclude=public -R *
 command! RemoveTrailingSpaces %s/\s\+$//e
 
 " CommandT
-let g:CommandTAlwaysShowDotFiles=1
-let g:CommandTMatchWindowAtTop=1
-
-map <leader>gv :CommandTFlush<cr>\|:CommandT app/views<cr>
-map <leader>gc :CommandTFlush<cr>\|:CommandT app/controllers<cr>
-map <leader>gm :CommandTFlush<cr>\|:CommandT app/models<cr>
-map <leader>gh :CommandTFlush<cr>\|:CommandT app/helpers<cr>
-map <leader>gs :CommandTFlush<cr>\|:CommandT spec<cr>
-map <leader>gl :CommandTFlush<cr>\|:CommandT lib<cr>
-map <leader>gj :CommandTFlush<cr>\|:CommandT app/assets/javascripts<cr>
+" let g:CommandTAlwaysShowDotFiles=1
+" let g:CommandTMatchWindowAtTop=1
+"
+" map <leader>gv :CommandTFlush<cr>\|:CommandT app/views<cr>
+" map <leader>gc :CommandTFlush<cr>\|:CommandT app/controllers<cr>
+" map <leader>gm :CommandTFlush<cr>\|:CommandT app/models<cr>
+" map <leader>gh :CommandTFlush<cr>\|:CommandT app/helpers<cr>
+" map <leader>gs :CommandTFlush<cr>\|:CommandT spec<cr>
+" map <leader>gl :CommandTFlush<cr>\|:CommandT lib<cr>
+" map <leader>gj :CommandTFlush<cr>\|:CommandT app/assets/javascripts<cr>
 
 " Cab vim
 let g:cab_ack_cmd = "ack -Qi"
@@ -255,6 +255,7 @@ Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
 Bundle 'rking/ag.vim'
 Bundle 'tomtom/tcomment_vim'
+Bundle 'kien/ctrlp.vim'
 Bundle 'thinca/vim-quickrun'
 
 Bundle 'vadimr/bclose.vim'
@@ -262,6 +263,14 @@ Bundle 'vadimr/bclose.vim'
 filetype plugin indent on
 
 " } Vundle
+
+" ctrlp
+let g:ctrlp_custom_ignore = 'bundle'
+let g:ctrlp_custom_ignore = 'tmp'
+let g:ctrlp_custom_ignore = 'public'
+let g:ctrlp_map = ''
+let g:ctrlp_working_path_mode = 'ra'
+map <leader>t :CtrlP<CR>
 
 " NERDTree
 map <Leader>n :NERDTreeFind<CR>
