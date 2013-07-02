@@ -5,6 +5,8 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+syntax on
+
 " ================ General Config ====================
 
 set number                      "Line numbers are good
@@ -113,6 +115,8 @@ au FileType text setlocal textwidth=78
 au BufNewFile,BufRead *.conf set ft=config
 
 autocmd Filetype gitcommit setlocal spell textwidth=72
+
+filetype plugin indent on
 
 if has("gui_running")
   set guicursor=a:block
@@ -243,6 +247,9 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 
+" Bundle 'fholgado/minibufexpl.vim'
+Bundle 'techlivezheng/vim-plugin-minibufexpl'
+
 Bundle 'scrooloose/nerdtree'
 Bundle 'tpope/vim-bundler'
 Bundle 'tpope/vim-rails'
@@ -282,6 +289,7 @@ map <Leader>r :QuickRun<CR>
 " minibuf
 let g:miniBufExplSplitBelow = 0
 let g:miniBufExplCheckDupeBufs = 0
+let g:did_minibufexplorer_syntax_inits = 1
 
 " ragtag
 let g:ragtag_global_maps = 1

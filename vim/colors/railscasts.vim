@@ -121,13 +121,25 @@ hi PMenuSbar guibg=#5A647E gui=NONE
 hi PMenuThumb guibg=#AAAAAA gui=NONE
 
 " MiniBufExpl Colors
+" MBENormal               - for buffers that have NOT CHANGED and are
+"                           NOT VISIBLE
+" MBEChanged              - for buffers that have CHANGED and are
+"                           NOT VISIBLE
+" MBEVisibleNormal        - for buffers that have NOT CHANGED and are
+"                           VISIBLE
+" MBEVisibleChanged       - for buffers that have CHANGED and are
+"                           VISIBLE
+" MBEVisibleActiveNormal  - for buffers that have NOT CHANGED and are
+"                           VISIBLE and is the active buffer
+" MBEVisibleActiveChanged - for buffers that have CHANGED and are
+"                           VISIBLE and is the active buffer
 " ------------------
-hi MBEVisibleActive guifg=#A6DB29 guibg=NONE
-hi MBEVisibleChangedActive guifg=#F1266F guibg=NONE
-hi MBEVisibleChanged guifg=#F1266F guibg=NONE
-hi MBEVisibleNormal guifg=#5DC2D6 guibg=NONE
-hi MBEChanged guifg=#CD5907 guibg=NONE
-hi MBENormal guifg=#808080 guibg=NONE
+hi MBENormal                guifg=#808080 guibg=NONE
+hi MBEChanged               guifg=#CD5907 guibg=NONE
+hi MBEVisibleNormal         guifg=#5DC2D6 guibg=NONE
+hi MBEVisibleChanged        guifg=#F1266F guibg=NONE
+hi MBEVisibleActiveNormal   guifg=#A6DB29 guibg=NONE
+hi MBEVisibleActiveChanged  guifg=#F1266F guibg=NONE
 
 
 " hi rubyDelimEscape guifg=#FF0000
