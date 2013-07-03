@@ -247,6 +247,7 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 
+Bundle 'mru.vim'
 " Bundle 'fholgado/minibufexpl.vim'
 Bundle 'techlivezheng/vim-plugin-minibufexpl'
 
