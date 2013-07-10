@@ -268,6 +268,7 @@ Bundle 'tomtom/tcomment_vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'thinca/vim-quickrun'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'ck3g/vim-change-hash-syntax'
 
 Bundle 'vadimr/bclose.vim'
 
@@ -297,3 +298,6 @@ let g:did_minibufexplorer_syntax_inits = 1
 
 " ragtag
 let g:ragtag_global_maps = 1
+
+" ChangeHashSyntax
+map <Leader>hs :ChangeHashSyntax<CR>
