@@ -253,6 +253,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'thinca/vim-quickrun'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'ck3g/vim-change-hash-syntax'
+Bundle 'matthias-guenther/hammer.vim'
 
 Bundle 'vadimr/bclose.vim'
 
