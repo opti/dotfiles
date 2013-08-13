@@ -125,17 +125,17 @@ if has("gui_running")
   set guioptions-=r
   set guifont=Meslo\ LG\ S\ for\ Powerline:h12
   " set guifont=Monaco:h12
+  " set guifont=DejaVu\ Sans\ Mono:h12
   " line padding
   set lsp=2
 
   " highlighting of cursor line
   set cursorline
 
-  set rtp+=/usr/local/lib/python2.7/site-packages/powerline/bindings/vim
   set laststatus=2
   set ambiwidth=single
-  set fillchars+=stl:\ ,stlnc:\
-  " set noshowmode
+  " set fillchars+=stl:\ ,stlnc:\
+  set noshowmode
 
   set guioptions-=T " hide toolbar
   set lines=55 columns=207
@@ -254,6 +254,8 @@ Bundle 'thinca/vim-quickrun'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'ck3g/vim-change-hash-syntax'
 Bundle 'matthias-guenther/hammer.vim'
+Bundle 'thoughtbot/vim-rspec'
+Bundle 'bling/vim-airline'
 
 Bundle 'vadimr/bclose.vim'
 
@@ -286,3 +288,21 @@ let g:ragtag_global_maps = 1
 
 " ChangeHashSyntax
 map <Leader>hs :ChangeHashSyntax<CR>
+
+" Rspec.vim mappings
+let g:rspec_command = "!rspec --no-color {spec}"
+
+map <Leader>1 :call RunCurrentSpecFile()<CR>
+" map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>2 :call RunLastSpec()<CR>
+" map <Leader>a :call RunAllSpecs()<CR>
+
+" Airline config
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_branch_prefix = ' '
+let g:airline_readonly_symbol = ''
+let g:airline_linecolumn_prefix = ' '
+let g:airline_theme='wobmat'
