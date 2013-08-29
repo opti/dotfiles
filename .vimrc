@@ -298,6 +298,7 @@ map <Leader>2 :call RunLastSpec()<CR>
 " map <Leader>a :call RunAllSpecs()<CR>
 
 " Airline config
+let g:airline_theme='wombat'
 let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
@@ -305,4 +306,3 @@ let g:airline_right_alt_sep = ''
 let g:airline_branch_prefix = ' '
 let g:airline_readonly_symbol = ''
 let g:airline_linecolumn_prefix = ' '
-let g:airline_theme='wobmat'
