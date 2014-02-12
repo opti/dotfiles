@@ -256,6 +256,7 @@ Bundle 'ck3g/vim-change-hash-syntax'
 Bundle 'matthias-guenther/hammer.vim'
 Bundle 'thoughtbot/vim-rspec'
 Bundle 'bling/vim-airline'
+Bundle 'skwp/greplace.vim'
 
 Bundle 'vadimr/bclose.vim'
 
@@ -277,6 +278,10 @@ let g:NERDTreeWinPos = "right"
 
 " Quick run
 map <Leader>r :QuickRun<CR>
+
+" Greplace
+set grepprg=ag
+let g:grep_cmd_opts = '--line-numbers --noheading'
 
 " minibuf
 let g:miniBufExplSplitBelow = 0
