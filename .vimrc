@@ -164,9 +164,15 @@ nnoremap <cr> :noh<CR><CR>:<backspace>
 nnoremap <tab> %
 vnoremap <tab> %
 
-" Jumps by 5 lines
-map <C-j> 5j
-map <C-k> 5k
+" Open new split panes to right and bottom, which feels more natural
+set splitbelow
+set splitright
+
+" Quicker window movement
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
 
 " Custom commands
 command! Rb setf ruby
