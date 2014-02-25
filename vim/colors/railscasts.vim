@@ -66,6 +66,7 @@ hi! link rubyExceptional Define
 hi! link rubyMethodExceptional rubyExceptional
 
 hi rubyConstant         guifg=#DA4938
+hi! link rubyRailsUserClass rubyConstant
 
 " #{foo}, <%= bar %>
 hi Delimiter            guifg=#509E50
