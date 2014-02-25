@@ -265,6 +265,7 @@ Bundle 'bling/vim-airline'
 Bundle 'skwp/greplace.vim'
 
 Bundle 'vadimr/bclose.vim'
+Bundle 'SyntaxAttr.vim'
 
 filetype plugin indent on
 
@@ -317,3 +318,5 @@ let g:airline_right_alt_sep = ''
 let g:airline_branch_prefix = ' '
 let g:airline_readonly_symbol = ''
 let g:airline_linecolumn_prefix = ' '
+
+map -a	:call SyntaxAttr()<CR>
