@@ -84,7 +84,7 @@ set wildmode=list:longest
 set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
 set wildignore+=*DS_Store*
 set wildignore+=*.o,*.obj,*~,.git,*.rbc,*.gem,*.class,vendor/gems,vendor/bundle
-set wildignore+=public/*,log/*,tmp,bin,script,coverage
+set wildignore+=public/*,log/*,tmp,bin,coverage
 set wildignore+=*.png,*.jpg,*.gif
 set wildignore+=*vim/backups*
 
@@ -123,7 +123,7 @@ if has("gui_running")
   set guioptions=egmrt
   " remove scrollbars
   set guioptions-=r
-  set guifont=Meslo\ LG\ S\ for\ Powerline:h12
+  set guifont=Meslo\ LG\ S\ for\ Powerline:h14
   " set guifont=Monaco:h12
   " set guifont=DejaVu\ Sans\ Mono:h12
   " line padding
@@ -138,7 +138,7 @@ if has("gui_running")
   set noshowmode
 
   set guioptions-=T " hide toolbar
-  set lines=55 columns=207
+  " set lines=55 columns=207
 
   colorscheme railscasts
 endif
@@ -169,10 +169,10 @@ set splitbelow
 set splitright
 
 " Quicker window movement
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
+nnoremap <A-D-Down> <C-w>j
+nnoremap <A-D-Up> <C-w>k
+nnoremap <A-D-Left> <C-w>h
+nnoremap <A-D-Right> <C-w>l
 
 " Custom commands
 command! Rb setf ruby
@@ -180,7 +180,7 @@ command! Py setf python
 command! Js setf javascript
 command! Rc e $MYVIMRC
 command! Profile e ~/.profile
-command! Ctags !ctags --exclude=*.{sql,js,log} --exclude=public -R *
+command! Ctags !ctags --exclude=*.{sql,js,log,git} --exclude=public -R *
 command! RemoveTrailingSpaces %s/\s\+$//e
 
 " Cab vim
@@ -250,7 +250,7 @@ Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-rake'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'pangloss/vim-javascript'
-Bundle 'tsaleh/vim-matchit'
+Bundle 'geoffharcourt/vim-matchit'
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
 Bundle 'rking/ag.vim'
@@ -282,6 +282,8 @@ map <leader>t :CtrlP<CR>
 " NERDTree
 map <Leader>n :NERDTreeFind<CR>
 let g:NERDTreeWinPos = "right"
+let g:NERDTreeMinimalUI = 1
+let g:NERDTreeWinSize = 51
 
 " Quick run
 map <Leader>r :QuickRun<CR>
