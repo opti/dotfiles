@@ -29,3 +29,9 @@ export PGDATA="/usr/local/var/postgres"
 
 # for Homebrew installed rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+# Insert project specific binstubs in the front.
+path=(
+  ./bin
+  $path
+)
