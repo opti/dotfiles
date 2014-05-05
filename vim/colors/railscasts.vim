@@ -24,6 +24,7 @@ let ruby_operators = 1
 " Tan          #FFC66D
 " Red          #DA4938
 
+hi NonText              guifg=#037485 guibg=NONE
 hi Normal               guifg=#E6E1DC guibg=#232323
 hi Cursor               guibg=#FFFFFF
 hi CursorLine           guibg=#333435
@@ -35,6 +36,11 @@ hi Directory            guifg=#A5C160 gui=NONE
 hi Error                guifg=#FFFFFF guibg=#990000
 hi MatchParen           guifg=#000000 guibg=#A5C160
 hi Title                guifg=#E6E1DC
+hi! VertSplit           guifg=#232323 guibg=#037485
+
+hi ColorColumn          guibg=#292929
+" hi OverLength           ctermbg=red ctermfg=white guibg=#592929
+" match OverLength /\%81v.\+/
 
 hi Comment              guifg=#BC9357 guibg=NONE gui=italic
 hi! link Todo Function
