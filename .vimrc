@@ -88,6 +88,7 @@ set wildignore+=*.o,*.obj,*~,.git,*.rbc,*.gem,*.class,vendor/gems,vendor/bundle
 set wildignore+=public/*,log/*,tmp,bin,coverage
 set wildignore+=*.png,*.jpg,*.gif
 set wildignore+=*vim/backups*
+set wildignore+=bower_components,node_modules
 
 " ================ Scrolling ========================
 
@@ -104,6 +105,7 @@ au BufNewFile,BufRead *.json set ft=javascript
 au FileType python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79
 " c - http://www.kernel.org/doc/Documentation/CodingStyle
 au FileType c set softtabstop=8 tabstop=8 shiftwidth=8 textwidth=79
+au BufNewFile,BufRead {*.hbs} set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79
 " html.erb is eruby
 au BufNewFile,BufRead {*.html.erb,*.yml} set filetype=eruby
 " 78 width for text files
@@ -233,41 +235,45 @@ map <leader>e :edit %%
 " Vudnle stuff {
 
 filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
-Bundle 'mru.vim'
-" Bundle 'fholgado/minibufexpl.vim'
-Bundle 'techlivezheng/vim-plugin-minibufexpl'
+Plugin 'mru.vim'
+" Plugin 'fholgado/minibufexpl.vim'
+Plugin 'techlivezheng/vim-plugin-minibufexpl'
 
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-ragtag'
-Bundle 'tpope/vim-surround'
-Bundle 'scrooloose/nerdtree'
-Bundle 'tpope/vim-bundler'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-rake'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'pangloss/vim-javascript'
-Bundle 'geoffharcourt/vim-matchit'
-Bundle 'rizzatti/funcoo.vim'
-Bundle 'rizzatti/dash.vim'
-Bundle 'rking/ag.vim'
-Bundle 'tomtom/tcomment_vim'
-Bundle 'kien/ctrlp.vim'
-Bundle 'thinca/vim-quickrun'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'ck3g/vim-change-hash-syntax'
-Bundle 'matthias-guenther/hammer.vim'
-Bundle 'thoughtbot/vim-rspec'
-Bundle 'bling/vim-airline'
-Bundle 'skwp/greplace.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-ragtag'
+Plugin 'tpope/vim-surround'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-bundler'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-rake'
+Plugin 'tpope/vim-dispatch'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-rbenv'
+Plugin 'pangloss/vim-javascript'
+Plugin 'geoffharcourt/vim-matchit'
+Plugin 'rizzatti/funcoo.vim'
+Plugin 'rizzatti/dash.vim'
+Plugin 'rking/ag.vim'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'thinca/vim-quickrun'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'ck3g/vim-change-hash-syntax'
+Plugin 'matthias-guenther/hammer.vim'
+Plugin 'thoughtbot/vim-rspec'
+Plugin 'bling/vim-airline'
+Plugin 'skwp/greplace.vim'
+Plugin 'mustache/vim-mustache-handlebars'
 
-Bundle 'vadimr/bclose.vim'
-Bundle 'SyntaxAttr.vim'
+Plugin 'vadimr/bclose.vim'
+Plugin 'SyntaxAttr.vim'
 
+call vundle#end()
 filetype plugin indent on
 
 " } Vundle
@@ -287,7 +293,7 @@ let g:NERDTreeMinimalUI = 1
 let g:NERDTreeWinSize = 51
 
 " Quick run
-map <Leader>r :QuickRun<CR>
+" map <Leader>r :QuickRun<CR>
 
 " Greplace
 set grepprg=ag
@@ -314,12 +320,17 @@ map <Leader>2 :call RunLastSpec()<CR>
 
 " Airline config
 let g:airline_theme='wombat'
+
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+
 let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
 let g:airline_right_alt_sep = ''
-let g:airline_branch_prefix = ' '
-let g:airline_readonly_symbol = ''
-let g:airline_linecolumn_prefix = ' '
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ''
 
 map -a	:call SyntaxAttr()<CR>
