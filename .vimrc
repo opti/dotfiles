@@ -265,7 +265,7 @@ Plugin 'thinca/vim-quickrun'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'ck3g/vim-change-hash-syntax'
 Plugin 'matthias-guenther/hammer.vim'
-Plugin 'thoughtbot/vim-rspec'
+Plugin 'thoughtbot/vim-rspec', {'pinned': 1}
 Plugin 'bling/vim-airline'
 Plugin 'skwp/greplace.vim'
 Plugin 'mustache/vim-mustache-handlebars'
