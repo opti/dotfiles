@@ -1,0 +1,315 @@
+" Igor Pstyga's .vimrc file
+" Based on https://github.com/vadimr/dotfiles/blob/master/.vimrc
+"          https://github.com/vdmgolub/vimfiles
+
+" Use Vim settings, rather then Vi settings (much better!).
+" This must be first, because it changes other options as a side effect.
+set nocompatible
+
+" ================ General Config ====================
+
+set relativenumber              " Relative numbers +
+set number                      " Line numbers
+set backspace=indent,eol,start  " Allow backspace in insert mode
+set history=1000                " Store lots of :cmdline history
+set showcmd                     " Show incomplete cmds down the bottom
+set showmode                    " Show current mode down the bottom
+set gcr=a:blinkon0              " Disable cursor blink
+set visualbell                  " No sounds
+set autoread                    " Reload files changed outside vim
+
+" This makes vim act like all other editors, buffers can
+" exist in the background without being in a window.
+" http://items.sjbach.com/319/configuring-vim-right
+set hidden
+
+" Turn on syntax highlighting
+syntax on
+
+" Change leader to a comma because the backslash is too far away
+" That means all \x commands turn into ,x
+let mapleader=","
+
+" ================ Turn Off Swap Files ==============
+
+set noswapfile
+set nobackup
+set nowb
+
+" ================ Persistent Undo ==================
+" Keep undo history across sessions, by storing in file.
+" Only works all the time.
+
+if has("persistent_undo")
+  silent !mkdir ~/.vim/tmp/undo > /dev/null 2>&1
+  set undodir=~/.vim/tmp/undo
+  set undofile
+endif
+
+" ================ NeoBundle ==============
+
+set runtimepath+=~/.vim/bundle/neobundle.vim/
+call neobundle#begin(expand('~/.vim/bundle/'))
+
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'jistr/vim-nerdtree-tabs'
+NeoBundle 'bufexplorer.zip'
+NeoBundle 'bling/vim-airline'
+NeoBundle 'vim-ruby/vim-ruby'
+NeoBundle 'tpope/vim-endwise'
+NeoBundle 'rking/ag.vim'
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'nathanaelkane/vim-indent-guides'
+NeoBundle 'tpope/vim-commentary'
+NeoBundle 'tpope/vim-repeat'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'ervandew/supertab'
+NeoBundle 'vdmgolub/vim-colors-solarized'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'majutsushi/tagbar'
+NeoBundle 'matchit.zip'
+NeoBundle 'tpope/vim-markdown'
+NeoBundle 'mattn/webapi-vim'
+NeoBundle 'mattn/gist-vim'
+NeoBundle 'mustache/vim-mustache-handlebars'
+NeoBundle "MarcWeber/vim-addon-mw-utils" " snipmate dependency
+NeoBundle "tomtom/tlib_vim" " snipmate dependency
+NeoBundle 'garbas/vim-snipmate'
+NeoBundle "honza/vim-snippets"
+NeoBundle "vdmgolub/vim-snippets", { 'name': 'my-snippets' }
+NeoBundle 'jiangmiao/auto-pairs'
+NeoBundle 'elixir-lang/vim-elixir'
+NeoBundle 'thoughtbot/vim-rspec'
+NeoBundle 'ck3g/vim-change-hash-syntax'
+NeoBundle 'skwp/greplace.vim'
+NeoBundle 'tpope/vim-ragtag'
+NeoBundle 'vadimr/bclose.vim'
+
+filetype plugin indent on
+NeoBundleCheck
+
+call neobundle#end()
+
+" ================ Plugins settings ==============
+
+" NERDTree
+let NERDTreeMinimalUI  = 1
+let NERDTreeShowHidden = 0
+let g:NERDTreeWinSize  = 41  " Window size
+let g:NERDTreeWinPos   = "right"
+let NERDTreeDirArrows  = 1
+
+" NERDTreeTabs
+let g:nerdtree_tabs_open_on_gui_startup = 0 " Auto open nerd tree on startup
+let g:nerdtree_tabs_focus_on_files = 1      " Focus in the main content window
+
+" Vim-Airline
+set laststatus=2
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ''
+
+" Syntastic
+let g:syntastic_check_on_open=1
+let g:syntastic_html_checkers = ['handlebars']
+
+" CtrlP
+let g:ctrlp_working_path_mode = 'ra'
+
+if executable('ag')
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s --files-with-matches -g ""
+                                \ --ignore "\.git$\|\.hg$\|\.svn$"
+                                \ --ignore "bundle"
+                                \ --ignore "tmp"
+                                \ --ignore "public"
+                                \ --ignore "images"
+                                \ --ignore "fonts"'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+else
+  " Fall back to using git ls-files if Ag is not available
+  let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
+  let g:ctrlp_custom_ignore = 'bundle'
+  let g:ctrlp_custom_ignore = 'tmp'
+  let g:ctrlp_custom_ignore = 'public'
+  let g:ctrlp_custom_ignore = 'images'
+  let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
+endif
+
+" Default to filename searches - so that appctrl will find application
+" controller
+let g:ctrlp_by_filename = 1
+
+" Don't jump to already open window. This is annoying if you are maintaining
+" several Tab workspaces and want to open two windows into the same file.
+let g:ctrlp_switch_buffer = 0
+
+" Gist-vim
+let g:gist_post_private = 1
+let g:gist_show_privates = 1
+let g:gist_detect_filetype = 1
+let g:gist_clip_command = 'pbcopy'
+
+" Indent Guides
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
+
+" Vim-Rspec
+let g:rspec_command = "!bin/rspec --no-color --format p {spec}"
+
+" Greplace
+set grepprg=ag
+let g:grep_cmd_opts = '--line-numbers --noheading'
+
+" ragtag
+let g:ragtag_global_maps = 1
+
+" Solarized
+let g:solarized_termcolors=256
+let g:solarized_termtrans=1
+let g:solarized_hitrail=1
+
+" ================ Interface ====================
+
+set background=dark
+color solarized
+set guifont=Inconsolata-dz\ for\ Powerline:h16
+set list listchars=tab:▸\ ,trail:·
+set t_Co=256
+set title
+set cursorline
+set guioptions-=L   " Remove left scroll bar
+set colorcolumn=80
+set splitbelow      " Open new split panes to the bottom
+set splitright      " Open new split panes to the right
+
+
+set wrap
+" set nowrap       " Don't wrap lines
+" set linebreak    " Wrap lines at convenient points
+
+set langmap=йq,цw,уe,кr,еt,нy,гu,шi,щo,зp,х[,ъ],фa,ыs,вd,аf,пg,рh,оj,лk,дl,ж\\;,э',яz,чx,сc,мv,иb,тn,ьm,б\\,,ю.,ё`,ЙQ,ЦW,УE,КR,ЕT,НY,ГU,ШI,ЩO,ЗP,Х{,Ъ},ФA,ЫS,ВD,АF,ПG,РH,ОJ,ЛK,ДL,Ж:,Э\\",ЯZ,ЧX,СC,МV,ИB,ТN,ЬM,Б<,Ю>,Ё~
+
+" ================ Indentation ======================
+
+set autoindent
+set smartindent
+set smarttab
+set shiftwidth=2
+set softtabstop=2
+set tabstop=2
+set expandtab
+
+" ================ Folds ============================
+
+set foldmethod=indent   "fold based on indent
+set foldnestmax=3       "deepest fold is 3 levels
+set nofoldenable        "dont fold by default
+
+" ================ Key mappings ====================
+
+au FocusLost * :wa " Save all changes if focus lost
+
+nnoremap <leader>n :NERDTreeTabsFind<cr>
+nnoremap <leader>b :BufExplorer<cr>
+nnoremap <leader>a :Ag<space>
+nnoremap <leader>aa :Ag<space><c-r><c-w><cr>
+nnoremap <silent><leader>t :CtrlP<cr>
+nnoremap <silent><leader>r :CtrlPTag<cr>
+nnoremap <leader>f :b#<cr> " Switch between two recent buffers
+nnoremap <leader>e :TagbarToggle<cr>
+nnoremap <silent><leader>l :set list!<cr>
+
+nnoremap <silent><leader><space> :noh<cr>
+nnoremap <cr> :noh<CR><CR>:<backspace>
+inoremap jj <esc>
+nnoremap <leader>gt :w<cr>:call RunCurrentSpecFile()<cr>
+nnoremap <leader>g :w<cr>:call RunNearestSpec()<cr>
+nnoremap <silent><leader>p :let @+=expand('%:p')<cr>
+nnoremap <silent><leader>pl :let @+=expand('%:p') . ':' . line('.')<cr>
+
+" Next mapping is adopted from destroyallsoftware.com screencasts.
+" It expands path of directory of current file typing %% in command mode
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+" map ,e to open files in the same directory as current file
+map <leader>e :edit %%
+
+noremap <silent><leader>ph :Gbrowse<cr>
+noremap <silent><leader>pg :Gbrowse!<cr>
+nmap <c-g> :bnext<cr>
+nmap <c-f> :bprevious<cr>
+nmap <c-n> :bdelete<cr>
+nmap <D-{> :bp<CR>
+nmap <D-}> :bn<CR>
+
+" ChangeHashSyntax
+map <Leader>hs :ChangeHashSyntax<CR>
+
+" ================ Plugins' default key mappings ====================
+
+" <leader>ig :IndentGuidesToggle<cr> - Show/hide indentation levels
+" gcc - comment/uncomment current line
+" gc - comment/uncomment selection (or target - gcap - paragraph)
+" TODO: add description for surround.vim
+
+" ================ Navigation and scrolling ====================
+
+nnoremap j gj
+nnoremap k gk
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+nnoremap <C-e> 3<C-e>
+nnoremap <C-y> 3<C-y>
+
+" Quicker window movement
+nnoremap <A-D-Down> <C-w>j
+nnoremap <A-D-Up> <C-w>k
+nnoremap <A-D-Left> <C-w>h
+nnoremap <A-D-Right> <C-w>l
+
+set ruler
+set scrolloff=8         " Start scrolling when we're 8 lines away from margins
+set sidescrolloff=15
+set sidescroll=1
+
+" ================ Completion =======================
+
+set wildmode=list:longest
+set wildmenu                " Enable ctrl-n and ctrl-p to scroll thru matches
+set wildignore+=*DS_Store*
+set wildignore+=*.o,*.obj,*~,.git,*.rbc,*.gem,*.class,vendor/gems,vendor/bundle
+set wildignore+=public/*,log/*,tmp,bin,coverage
+set wildignore+=*.png,*.jpg,*.gif
+set wildignore+=*vim/backups*
+set wildignore+=bower_components,node_modules
+
+" ================ Search =======================
+
+nnoremap / /\v
+vnoremap / /\v
+set ignorecase
+set smartcase
+set gdefault
+set incsearch
+set showmatch
+set hlsearch
+nnoremap <tab> %
+vnoremap <tab> %
