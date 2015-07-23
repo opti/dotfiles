@@ -226,7 +226,7 @@ set nofoldenable        "dont fold by default
 
 au FocusLost * :wa " Save all changes if focus lost
 
-nnoremap <leader>n :NERDTreeTabsFind<cr>
+nnoremap <leader>n :NERDTreeFind<cr>
 nnoremap <leader>b :BufExplorer<cr>
 nnoremap <leader>a :Ag<space>
 nnoremap <leader>aa :Ag<space><c-r><c-w><cr>
