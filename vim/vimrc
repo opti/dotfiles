@@ -60,7 +60,7 @@ NeoBundle 'bling/vim-airline'
 NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'tpope/vim-endwise'
 NeoBundle 'rking/ag.vim'
-NeoBundle 'scrooloose/syntastic'
+" NeoBundle 'scrooloose/syntastic'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'tpope/vim-commentary'
@@ -94,6 +94,9 @@ NeoBundleCheck
 call neobundle#end()
 
 " ================ Plugins settings ==============
+
+" Vim-ruby
+let g:ruby_path = system('echo $HOME/.rbenv/shims')
 
 " NERDTree
 let NERDTreeMinimalUI  = 1
