@@ -201,7 +201,7 @@ set guioptions-=L   " Remove left scroll bar
 set colorcolumn=80
 set splitbelow      " Open new split panes to the bottom
 set splitright      " Open new split panes to the right
-
+set noballooneval   " Turns balloons off
 
 set wrap
 " set nowrap       " Don't wrap lines
