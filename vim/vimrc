@@ -251,7 +251,7 @@ nnoremap <silent><leader>pl :let @+=expand('%:p') . ':' . line('.')<cr>
 " It expands path of directory of current file typing %% in command mode
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 " map ,e to open files in the same directory as current file
-map <leader>e :edit %%
+map <leader>pe :edit %%
 
 noremap <silent><leader>ph :Gbrowse<cr>
 noremap <silent><leader>pg :Gbrowse!<cr>
