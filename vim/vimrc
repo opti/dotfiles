@@ -82,7 +82,7 @@ NeoBundle "honza/vim-snippets"
 NeoBundle "vdmgolub/vim-snippets", { 'name': 'my-snippets' }
 NeoBundle 'jiangmiao/auto-pairs'
 NeoBundle 'elixir-lang/vim-elixir'
-NeoBundle 'thoughtbot/vim-rspec'
+NeoBundle 'thoughtbot/vim-rspec', { 'rev': 'b0d30e2' }
 NeoBundle 'ck3g/vim-change-hash-syntax'
 NeoBundle 'skwp/greplace.vim'
 NeoBundle 'tpope/vim-ragtag'
@@ -242,8 +242,8 @@ nnoremap <silent><leader>l :set list!<cr>
 nnoremap <silent><leader><space> :noh<cr>
 nnoremap <cr> :noh<CR><CR>:<backspace>
 inoremap jj <esc>
-nnoremap <leader>gt :w<cr>:call RunCurrentSpecFile()<cr>
-nnoremap <leader>g :w<cr>:call RunNearestSpec()<cr>
+nnoremap <leader>1 :call RunCurrentSpecFile()<cr>
+nnoremap <leader>2 :call RunLastSpec()<cr>
 nnoremap <silent><leader>p :let @+=expand('%:p')<cr>
 nnoremap <silent><leader>pl :let @+=expand('%:p') . ':' . line('.')<cr>
 
