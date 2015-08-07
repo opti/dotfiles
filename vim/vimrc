@@ -113,6 +113,7 @@ let g:nerdtree_tabs_focus_on_files = 1      " Focus in the main content window
 set laststatus=2
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':p:t'
 
 " Syntastic
 let g:syntastic_check_on_open=1
