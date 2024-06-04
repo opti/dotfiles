@@ -4,4 +4,5 @@
 
 # Except the following
 !.gitignore
+!tmux/
 !zsh/
