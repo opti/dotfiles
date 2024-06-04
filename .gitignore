@@ -4,6 +4,7 @@
 
 # Except the following
 !.gitignore
+!README.md
 !nvim/
 !tmux/
 !zsh/
