@@ -13,7 +13,8 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({ { import = "opti.plugins" }, { import = "opti.plugins.lsp" } }, {
   install = {
-    colorscheme = { "tokyonight" },
+    -- colorscheme = { "tokyonight" },
+    colorscheme = { "catppuccin-mocha" },
   },
   checker = {
     enabled = true,
