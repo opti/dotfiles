@@ -51,3 +51,9 @@ keymap.set(
   { silent = true, desc = "Create a GitHub gist from current buffer" }
 )
 keymap.set("v", "<leader>hh", "<cmd>GistCreate from vim<cr>", { desc = "Create a GitHub gist from selection" })
+
+-- Aerial
+keymap.set("n", "<leader>cl", "<cmd>AerialToggle<cr>", { silent = true, desc = "Toggle Aerial" })
+
+-- Lazy
+keymap.set("n", "<leader>lu", "<cmd>Lazy update<cr>", { silent = true, desc = "Update plugins" })
