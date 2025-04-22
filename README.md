@@ -18,8 +18,8 @@ Configuration files for neovim, tmux, zsh, fish and wezterm
 
 Clone this repo:
 ```
-    git clone git@github.com:opti/dotfiles.git ~/.config
-    ```
+git clone git@github.com:opti/dotfiles.git ~/.config
+```
 
 ### Zsh edition
 1. Install [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh)
