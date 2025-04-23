@@ -1,0 +1,68 @@
+[alias]
+  main-branch-name = "!f() { basename $(git symbolic-ref refs/remotes/origin/HEAD) ; }; f"
+  st = status
+  ca = commit -a
+  cm = commit
+  com = ! git checkout $(git main-branch-name)
+  co = checkout
+  pr = pull --rebase
+  br = branch
+  l = log --graph --abbrev-commit --date=relative
+  stashu = stash -u
+  rim = ! git rebase -i $(git main-branch-name)
+  pf = push --force-with-lease
+  pr-sweep = "!git branch | grep -E $(echo $(gh pr list --state merged --json headRefName --jq '.[].headRefName') | sed 's/ /|/g') | xargs git branch -D"
+  remove-merged = "!f() { if [ -z \"$1\" ]; then exit 1; fi; git branch --merged \"$1^\"; }; f"
+  sweep-local = "!git remove-merged $(git main-branch-name) | xargs -n 1 -r git branch -D"
+[color]
+  ui = auto
+  diff = auto
+  status = auto
+  branch = auto
+[color "diff-highlight"]
+  oldHighlight = red bold 52
+  newHighlight = green bold 22
+[core]
+  excludesfile = /Users/igorp/.gitignore
+  autocrlf = input
+  pager = /opt/homebrew/share/git-core/contrib/diff-highlight/diff-highlight | less
+[apply]
+  whitespace = warn
+[format]
+  pretty = %C(bold yellow)%h%Creset -%C(red)%d%Creset %s (%C(green)%an, %cr%Creset)
+[github]
+  user = opti
+[merge]
+  stat = true
+[diff]
+  indentHeuristic = true
+  ; compactionHeuristic = true
+  algorithm = patience
+[filter "media"]
+  clean = git media clean %f
+  smudge = git media smudge %f
+  required = true
+[filter "hawser"]
+  clean = git hawser clean %f
+  smudge = git hawser smudge %f
+  required = true
+[filter "lfs"]
+  required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+[commit]
+  gpgSign = true
+  template = ~/.gitmessage
+[rebase]
+  autosquash = true
+[credential]
+  helper = osxkeychain
+[advice]
+  skippedCherryPicks = false
+[tag]
+  gpgSign = true
+[init]
+  defaultBranch = main
+[url "ssh://git@github.com/"]
+  insteadOf = https://github.com/

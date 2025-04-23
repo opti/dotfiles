@@ -4,6 +4,8 @@
 
 # Except the following
 !.gitignore
+!.gitconfig
+!.gitmessage
 !README.md
 !fish/
 !iterm2/
