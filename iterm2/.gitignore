@@ -5,9 +5,5 @@
 # Except the following
 !.gitignore
 !README.md
-!fish/
-!iterm2/
-!nvim/
-!tmux/
-!wezterm/
-!zsh/
+!opti.itermcolors
+!igorp.json
