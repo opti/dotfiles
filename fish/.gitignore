@@ -1,0 +1,8 @@
+# Ignore everything
+/*
+/*/
+
+# Except the following
+!.gitignore
+!config.fish
+!fish_plugins
