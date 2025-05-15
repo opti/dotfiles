@@ -38,6 +38,7 @@ return {
         -- "gopls",
         -- "nextls",
         -- "pyright",
+        "ruby_lsp",
         "solargraph",
         -- "cucumber_language_server",
       },

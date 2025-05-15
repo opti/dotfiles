@@ -48,3 +48,6 @@ opt.swapfile = false
 vim.api.nvim_create_autocmd('VimLeave', {
   command = 'set guicursor=a:ver5'
 })
+
+-- Prepend mise shims to PATH
+vim.env.PATH = vim.env.HOME .. "/.local/share/mise/shims:" .. vim.env.PATH
