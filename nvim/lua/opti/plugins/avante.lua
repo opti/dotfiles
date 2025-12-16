@@ -6,17 +6,17 @@ return {
   opts = {
     -- add any opts here
     -- for example
-    provider = "claude",
+    provider = "claude-code",
     providers = {
-      claude = {
-        endpoint = "https://api.anthropic.com",
-        model = "claude-3-7-sonnet-20250219",
-        extra_request_body = {
-          temperature = 0,
-          max_tokens = 4096,
-        },
-      },
-      -- openai = {
+      -- claude = {
+      --   endpoint = "https://api.anthropic.com",
+      --   model = "claude-4-5-sonnet",
+      --   extra_request_body = {
+      --     temperature = 0,
+      --     max_tokens = 4096,
+      --   },
+      -- },
+      -- -- openai = {
       --   endpoint = "https://api.openai.com/v1",
       --   model = "gpt-4o", -- your desired model (or use gpt-4o, etc.)
       --   timeout = 30000, -- timeout in milliseconds
@@ -26,6 +26,15 @@ return {
       --   }
       --   -- reasoning_effort = "high" -- only supported for reasoning models (o1, etc.)
       -- },
+    },
+    acp_providers = {
+      ["claude-code"] = {
+        command = "npx",
+        args = { "@zed-industries/claude-code-acp" },
+        env = {
+          NODE_NO_WARNINGS = "1",
+        },
+      },
     },
   },
   -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
