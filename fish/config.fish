@@ -16,3 +16,6 @@ end
 function fish
   source ~/.config/fish/config.fish
 end
+
+alias be="bundle exec"
+echo -ne '\e[5 q'
