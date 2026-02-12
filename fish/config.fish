@@ -1,6 +1,7 @@
 source ~/.config/op/plugins.sh
 
 set -g fish_greeting
+set -U tide_left_prompt_items pwd git newline
 
 set -Ux fish_user_paths /opt/homebrew/bin
 set -Ux EDITOR nvim
