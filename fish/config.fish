@@ -3,7 +3,7 @@ source ~/.config/op/plugins.sh
 set -g fish_greeting
 set -U tide_left_prompt_items pwd git newline
 
-set -Ux fish_user_paths /opt/homebrew/bin
+fish_add_path -g /opt/homebrew/bin
 set -Ux EDITOR nvim
 set -Ux TMUX_PLUGIN_MANAGER_PATH ~/.config/tmux/plugins/tpm/
 set -Ux RUBY_CONFIGURE_OPTS "--with-openssl-dir=$(brew --prefix openssl@3)"
