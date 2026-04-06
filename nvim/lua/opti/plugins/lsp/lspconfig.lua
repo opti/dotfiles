@@ -143,5 +143,6 @@ return {
   {
     "hinell/lsp-timeout.nvim",
     dependencies = { "neovim/nvim-lspconfig" },
+    event = { "BufReadPre", "BufNewFile" },
   },
 }
