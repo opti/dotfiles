@@ -19,4 +19,8 @@ function fish
 end
 
 alias be="bundle exec"
-echo -ne '\e[5 q'
+
+# Reset cursor to blinking bar on every prompt (fixes nvim restoring block cursor on exit)
+function reset_cursor --on-event fish_prompt
+    printf '\e[5 q'
+end
