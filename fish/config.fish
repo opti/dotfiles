@@ -8,11 +8,7 @@ set -Ux EDITOR nvim
 set -Ux TMUX_PLUGIN_MANAGER_PATH ~/.config/tmux/plugins/tpm/
 set -Ux RUBY_CONFIGURE_OPTS "--with-openssl-dir=$(brew --prefix openssl@3)"
 
-if status is-interactive
-  mise activate fish | source
-else
-  mise activate fish --shims | source
-end
+mise activate fish --shims | source
 
 function fish
   source ~/.config/fish/config.fish
