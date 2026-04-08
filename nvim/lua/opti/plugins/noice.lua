@@ -5,13 +5,17 @@ return {
   end,
   event = "VeryLazy",
   opts = {
-    -- add any options here
     lsp = {
-      -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
+      -- Override markdown rendering so that LSP hover/signature uses Treesitter.
+      -- NOTE: vim.lsp.util.convert_input_to_markdown_lines and
+      -- vim.lsp.util.stylize_markdown are deprecated and scheduled for removal
+      -- in Neovim 0.12+. Noice handles nil gracefully, but these overrides may
+      -- need to be dropped once the functions are fully removed upstream.
+      -- cmp.entry.get_documentation is intentionally omitted — blink-cmp does
+      -- not expose that API.
       override = {
         ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
         ["vim.lsp.util.stylize_markdown"] = true,
-        ["cmp.entry.get_documentation"] = true,
       },
     },
     -- you can enable a preset for easier configuration
