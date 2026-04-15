@@ -7,6 +7,7 @@ fish_add_path -g /opt/homebrew/bin
 set -Ux EDITOR nvim
 set -Ux TMUX_PLUGIN_MANAGER_PATH ~/.config/tmux/plugins/tpm/
 set -Ux RUBY_CONFIGURE_OPTS "--with-openssl-dir=$(brew --prefix openssl@3)"
+set -gx CLAUDE_CODE_TMUX_TRUECOLOR 1
 
 mise activate fish --shims | source
 
