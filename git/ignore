@@ -13,3 +13,4 @@
 /tags
 /vendor
 log/*.log
+tmp/**/*
