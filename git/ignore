@@ -1,0 +1,15 @@
+*~
+.DS_Store
+.bundle
+.byebug_history
+.env
+.irb-history
+.nvmrc
+.rake_tasks~
+.rbenv-gemsets
+.rbenv-vars
+.ruby-version
+/node_modules
+/tags
+/vendor
+log/*.log

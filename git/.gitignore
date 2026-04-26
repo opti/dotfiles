@@ -4,11 +4,6 @@
 
 # Except the following
 !.gitignore
-!README.md
-!fish/
-!git
-!iterm2/
-!nvim/
-!tmux/
-!wezterm/
-!zsh/
+!config
+!ignore
+!message

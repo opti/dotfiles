@@ -1,3 +1,21 @@
+[user]
+  name = Igor Pstyga
+  email = git@igrpst.com
+  signingkey = ~/.ssh/github_opti.pub
+[gpg]
+  format = ssh
+[gpg "ssh"]
+  program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+  allowedSignersFile = ~/.config/git/signers
+[push]
+  default = tracking
+  gpgSign = if-asked
+  autoSetupRemote = true
+[github]
+  user = opti
+[include]
+  path = ~/.config/git/overrides
+
 [alias]
   main-branch-name = "!f() { basename $(git symbolic-ref refs/remotes/origin/HEAD) ; }; f"
   st = status
@@ -23,15 +41,13 @@
   oldHighlight = red bold 52
   newHighlight = green bold 22
 [core]
-  excludesfile = /Users/igorp/.gitignore
+  excludesfile = ~/.config/git/ignore
   autocrlf = input
   pager = /opt/homebrew/share/git-core/contrib/diff-highlight/diff-highlight | less
 [apply]
   whitespace = warn
 [format]
   pretty = %C(bold yellow)%h%Creset -%C(red)%d%Creset %s (%C(green)%an, %cr%Creset)
-[github]
-  user = opti
 [merge]
   stat = true
 [diff]
@@ -53,7 +69,7 @@
   process = git-lfs filter-process
 [commit]
   gpgSign = true
-  template = ~/.gitmessage
+  template = ~/.config/git/message
 [rebase]
   autosquash = true
 [credential]
