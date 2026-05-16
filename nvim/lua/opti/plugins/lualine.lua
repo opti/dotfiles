@@ -11,10 +11,10 @@ return {
       options = {
         theme = "tokyonight",
         disabled_filetypes = {
-          statusline = { "NvimTree" },
           winbar = { "NvimTree" },
         },
       },
+      extensions = { "nvim-tree" },
       sections = {
         lualine_x = {
           {

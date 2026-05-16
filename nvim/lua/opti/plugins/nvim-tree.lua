@@ -16,6 +16,10 @@ return {
 
     -- configure nvim-tree
     nvimtree.setup({
+      on_attach = function(bufnr)
+        require("nvim-tree.api").config.mappings.default_on_attach(bufnr)
+        vim.opt_local.winbar = ""
+      end,
       view = {
         width = 45,
         relativenumber = false,
