@@ -8,7 +8,7 @@
   program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
   allowedSignersFile = ~/.config/git/signers
 [push]
-  default = tracking
+  default = current
   gpgSign = if-asked
   autoSetupRemote = true
 [github]
