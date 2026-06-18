@@ -44,6 +44,8 @@
   excludesfile = ~/.config/git/ignore
   autocrlf = input
   pager = /opt/homebrew/share/git-core/contrib/diff-highlight/diff-highlight | less
+	fsmonitor = true
+	untrackedCache = true
 [apply]
   whitespace = warn
 [format]
