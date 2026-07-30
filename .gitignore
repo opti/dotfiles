@@ -5,6 +5,7 @@
 # Except the following
 !.gitignore
 !README.md
+!Brewfile
 !fish/
 !git
 !iterm2/
